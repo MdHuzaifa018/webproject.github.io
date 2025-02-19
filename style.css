@@ -118,7 +118,7 @@ z-index: 1000;
   }
   #menu ul{
     position: absolute;
-    top: 100%;
+    top: 30%;
     background:linear-gradient(to left, #ff6a00, #f44336, #9c27b0) ;
     right: 0;
     left: 0;
