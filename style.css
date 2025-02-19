@@ -9,7 +9,7 @@
 header{
   background:linear-gradient(to left, #ff6a00, #f44336, #9c27b0);
   box-shadow: 0 20px 20px -10px black;
-  position: sticky;
+  /*position: sticky;*/
   top: 0;
   margin-bottom: 32px;
   padding: 10px;
@@ -118,7 +118,7 @@ z-index: 1000;
   }
   #menu ul{
     position: absolute;
-    top: 25%;
+    top: 100%;
     background:linear-gradient(to left, #ff6a00, #f44336, #9c27b0) ;
     right: 0;
     left: 0;
