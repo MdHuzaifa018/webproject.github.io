@@ -9,11 +9,12 @@
 header{
   background:linear-gradient(to left, #ff6a00, #f44336, #9c27b0);
   box-shadow: 0 20px 20px -10px black;
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   margin-bottom: 32px;
   padding: 10px;
 /*   width: 100vh; */
+z-index: 1000;
 }
   
 /* navbar */
@@ -503,3 +504,15 @@ marquee {
   }
 }
 
+/* Default hidden animation */
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* When element becomes visible */
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+    }
