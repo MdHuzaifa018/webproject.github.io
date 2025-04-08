@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Courses - CODEE CRAFTER</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(255, 106, 0, 0.2),
+                rgba(244, 67, 54, 0.2),
+                rgba(156, 39, 176, 0.2)
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            z-index: 1;
+        }
+
+        .add-course-card {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-course-card:hover {
+            border-color: #ff6a00;
+            transform: translateY(-5px);
+        }
+
+        .add-icon {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .add-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        #courseForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Copy your existing header here -->
+    </header>
+
+    <section id="courses">
+        <div class="section-header">
+            <h2>YouTube Course Playlists</h2>
+            <p class="section-subtitle">Add and manage your favorite programming course playlists</p>
+        </div>
+
+        <div class="courses-grid">
+            <div class="course-card add-course-card" onclick="showForm()">
+                <div class="add-icon">+</div>
+                <div class="add-text">Add New Course</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay" id="overlay"></div>
+    <div id="courseForm">
+        <h3 style="color: white; margin-bottom: 20px;">Add New Course</h3>
+        <div class="form-group">
+            <label>Course Title</label>
+            <input type="text" id="courseTitle" required>
+        </div>
+        <div class="form-group">
+            <label>YouTube Playlist URL</label>
+            <input type="url" id="playlistUrl" required>
+        </div>
+        <div class="form-group">
+            <label>Thumbnail URL (Optional)</label>
+            <input type="url" id="thumbnailUrl">
+        </div>
+        <div class="form-buttons">
+            <button onclick="hideForm()" class="card-button" style="background: #666;">Cancel</button>
+            <button onclick="addCourse()" class="card-button">Add Course</button>
+        </div>
+    </div>
+
+    <script>
+        function showForm() {
+            document.getElementById('courseForm').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function hideForm() {
+            document.getElementById('courseForm').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function addCourse() {
+            const title = document.getElementById('courseTitle').value;
+            const url = document.getElementById('playlistUrl').value;
+            const thumbnail = document.getElementById('thumbnailUrl').value || 'default-thumbnail.jpg';
+
+            if (title && url) {
+                const coursesGrid = document.querySelector('.courses-grid');
+                const newCard = document.createElement('div');
+                newCard.className = 'course-card';
+                newCard.innerHTML = `
+                    <div class="card-image">
+                        <img src="${thumbnail}" alt="${title}">
+                    </div>
+                    <div class="card-content">
+                        <h3>${title}</h3>
+                        <a href="${url}" target="_blank" class="card-button">Watch Course</a>
+                    </div>
+                `;
+                coursesGrid.insertBefore(newCard, document.querySelector('.add-course-card'));
+                hideForm();
+            }
+        }
+    </script>
+</body>
+</html> 
