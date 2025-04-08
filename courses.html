@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CODEE CRAFTER - Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg,
+                rgba(255, 106, 0, 0.2),
+                rgba(244, 67, 54, 0.2),
+                rgba(156, 39, 176, 0.2)
+            );
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+            z-index: 1;
+        }
+
+        .add-course-card {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-course-card:hover {
+            border-color: #ff6a00;
+            transform: translateY(-5px);
+        }
+
+        .add-icon {
+            font-size: 48px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+        }
+
+        .add-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+        }
+
+        #courseForm {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(30, 30, 30, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            z-index: 1000;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="menu">
+            <div class="logo">
+                <img src="Crafter.jpg" alt="logo">
+            </div>
+            <div class="brand-name">
+                CODEE CRAFTER
+            </div>
+            <input type="checkbox" name="" id="responsive_menu">
+            <label for="responsive_menu"></label>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#notes">Notes</a></li>
+                <li><a href="index.html#programming">Programming</a></li>
+                <li><a href="index.html#upload">Upload</a></li>
+            </ul>
+        </nav>
+        <div class="rightNav">
+            <input type="text" name="search" id="search" placeholder="Search...">
+            <button class="btn">search</button>
+        </div>
+    </header>
+
+    <section id="courses">
+        <div class="courses-bg">
+            <div class="courses-overlay"></div>
+        </div>
+
+        <div class="section-header">
+            <h2>OUR COURSES</h2>
+            <p class="section-subtitle">EXPLORE OUR COMPREHENSIVE COURSE CATALOG</p>
+        </div>
+
+        <div class="courses-grid">
+            <!-- Web Development Course -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80" alt="Web Development">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Web Development</h3>
+                    <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Python Programming -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80" alt="Python">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Python Programming</h3>
+                    <p>Learn Python from basics to advanced concepts including data science and automation</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Data Structures & Algorithms -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80" alt="DSA">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Master fundamental data structures and algorithms for efficient problem-solving</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80" alt="Mobile Development">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Mobile App Development</h3>
+                    <p>Build cross-platform mobile applications using React Native and Flutter</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Machine Learning -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="Machine Learning">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Machine Learning</h3>
+                    <p>Learn the fundamentals of machine learning and artificial intelligence</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+
+            <!-- Cloud Computing -->
+            <div class="course-card">
+                <div class="card-border"></div>
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" alt="Cloud Computing">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Cloud Computing</h3>
+                    <p>Master cloud platforms like AWS, Azure, and Google Cloud for scalable applications</p>
+                    <a href="#" class="card-button">Enroll Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Codee Crafter | All Rights Reserved</p>
+        <marquee behavior="scroll" direction="left" scrollamount="3">
+            <p>Made by <span class="author">Huzaif</span></p>
+        </marquee>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
