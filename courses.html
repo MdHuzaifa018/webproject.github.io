@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CODEE CRAFTER - Courses</title>
     <link rel="stylesheet" href="style.css">
-    <style>
+
+    <!-- <style>
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -21,7 +23,7 @@
             border-radius: 15px;
             overflow: hidden;
             position: relative;
-            height: 400px;
+            height: 450px;
             display: flex;
             flex-direction: column;
             transition: transform 0.3s ease;
@@ -119,136 +121,361 @@
             background: rgba(0, 0, 0, 0.8);
             z-index: 999;
         }
-    </style>
+    </style> -->
 </head>
+
 <body>
     <header>
-        <nav id="menu">
+        <nav class="navbar">
             <div class="logo">
-                <img src="Crafter.jpg" alt="logo">
+                <img src="img/Crafter.png" />
             </div>
-            <div class="brand-name">
-                CODEE CRAFTER
-            </div>
-            <input type="checkbox" name="" id="responsive_menu">
+            <div class="name">CODE CRAFTER</div>
+            <!-- <div class="menu-toggle" id="menu-toggle"> -->
+            <!-- <i class="fas fa-bars"></i>
+    </div> -->
+
+            <input type="checkbox" name="" id="responsive_menu" />
             <label for="responsive_menu"></label>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#notes">Notes</a></li>
-                <li><a href="index.html#programming">Programming</a></li>
-                <li><a href="index.html#upload">Upload</a></li>
+
+            <ul id="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notes</a></li>
+                <li><a href="#">Programming</a></li>
+                <li><a href="#">Upload</a></li>
             </ul>
         </nav>
-        <div class="rightNav">
-            <input type="text" name="search" id="search" placeholder="Search...">
+        <div class="mode-switch">
+            <button id="mode-button">🌙</button>
+        </div>
+        <div class="search-box">
+            <input type="text" name="search" id="search" placeholder="Search..." />
             <button class="btn">search</button>
         </div>
     </header>
-
     <section id="courses">
         <div class="courses-bg">
             <div class="courses-overlay"></div>
         </div>
 
         <div class="section-header">
-            <h2>OUR COURSES</h2>
+            <h2>BEST YOUTUBE COURSES</h2>
             <p class="section-subtitle">EXPLORE OUR COMPREHENSIVE COURSE CATALOG</p>
         </div>
 
-        <div class="courses-grid">
+
+
+
+
+        <div class="notes-grid">
+
+
+
             <!-- Web Development Course -->
-            <div class="course-card">
-                <div class="card-border"></div>
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80" alt="Web Development">
-                    <div class="image-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80"
+                        alt="Web Development">
+                    <!-- <div class="image-overlay"></div> -->
                 </div>
                 <div class="card-content">
                     <h3>Web Development</h3>
                     <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <a href="#" class="card-button">Watch Now</a>
                 </div>
+
             </div>
 
-            <!-- Python Programming -->
-            <div class="course-card">
-                <div class="card-border"></div>
+            <!-- C Programming -->
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80" alt="Python">
-                    <div class="image-overlay"></div>
+                    <img src="img/c_lang.jpg" alt="C Programming">
+                    <!-- <div class="image-overlay"></div> -->
                 </div>
                 <div class="card-content">
-                    <h3>Python Programming</h3>
-                    <p>Learn Python from basics to advanced concepts including data science and automation</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <h3>C Programming</h3>
+                    <p>Learn C Programming from basics to advanced concepts </p>
+                    <a href="https://youtu.be/aZb0iu4uGwA?si=EIa5exmUpmZhGDoo" class="card-button">Watch Now</a>
                 </div>
+
             </div>
 
-            <!-- Data Structures & Algorithms -->
-            <div class="course-card">
-                <div class="card-border"></div>
+
+
+            <!-- c++ programming -->
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80" alt="DSA">
-                    <div class="image-overlay"></div>
+                    <img src="img/c++.jpg" alt="c++ Programming">
+
                 </div>
                 <div class="card-content">
-                    <h3>Data Structures & Algorithms</h3>
-                    <p>Master fundamental data structures and algorithms for efficient problem-solving</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <h3>C++ Programming</h3>
+                    <p>Learn C++ Programming from basics to advanced concepts </p>
+                    <a href="https://youtu.be/e7sAf4SbS_g?si=WXg-Wqhe5-S_Jy_N" class="card-button">Watch Now</a>
                 </div>
+
             </div>
 
-            <!-- Mobile App Development -->
-            <div class="course-card">
-                <div class="card-border"></div>
+
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
+
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80" alt="Mobile Development">
-                    <div class="image-overlay"></div>
+                    <img src="img/java.jpeg"
+                        alt="Java">
+                    <!-- <div class="image-overlay"></div> -->
                 </div>
                 <div class="card-content">
-                    <h3>Mobile App Development</h3>
-                    <p>Build cross-platform mobile applications using React Native and Flutter</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <h3>Java Programming</h3>
+                    <p>Learn Java Programming from basics to advanced concepts including data science and automation</p>
+                    <a href="https://youtube.com/playlist?list=PL78RhpUUKSweClRi_l05UgfE3053-zkRf&si=ddvSyUC6c9JwRPXB" class="card-button">Watch Now</a>
                 </div>
+
             </div>
 
-            <!-- Machine Learning -->
-            <div class="course-card">
-                <div class="card-border"></div>
+
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80" alt="Machine Learning">
-                    <div class="image-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80"
+                        alt="Web Development">
+                    <!-- <div class="image-overlay"></div> -->
                 </div>
                 <div class="card-content">
-                    <h3>Machine Learning</h3>
-                    <p>Learn the fundamentals of machine learning and artificial intelligence</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <h3>Web Development</h3>
+                    <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
+                    <a href="#" class="card-button">Watch Now</a>
                 </div>
+
             </div>
 
-            <!-- Cloud Computing -->
-            <div class="course-card">
-                <div class="card-border"></div>
+
+
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80" alt="Cloud Computing">
-                    <div class="image-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80"
+                        alt="Web Development">
+                    <!-- <div class="image-overlay"></div> -->
                 </div>
                 <div class="card-content">
-                    <h3>Cloud Computing</h3>
-                    <p>Master cloud platforms like AWS, Azure, and Google Cloud for scalable applications</p>
-                    <a href="#" class="card-button">Enroll Now</a>
+                    <h3>Web Development</h3>
+                    <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
+                    <a href="#" class="card-button">Watch Now</a>
                 </div>
+
             </div>
+
+
+
+
+            <div class="note-card">
+                <!-- <div class="card-border"></div> -->
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80"
+                        alt="Web Development">
+                    <!-- <div class="image-overlay"></div> -->
+                </div>
+                <div class="card-content">
+                    <h3>Web Development</h3>
+                    <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
+                    <a href="#" class="card-button">Watch Now</a>
+                </div>
+
+            </div>
+
         </div>
+
+
+
+
+
+
+
+
+
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?auto=format&fit=crop&q=80"
+                    alt="Web Development">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Web Development</h3>
+                <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- C Programming -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="img/c_lang.jpg" alt="C Programming">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>C Programming</h3>
+                <p>Learn C Programming from basics to advanced concepts </p>
+                <a href="https://youtu.be/ZSPZob_1TOk?si=taoh6EaA_YyZNagw" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- c++ programming -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="img/c++.jpg" alt="c++ Programming">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>C++ Programming</h3>
+                <p>Learn C++ Programming from basics to advanced concepts </p>
+                <a href="https://youtu.be/e7sAf4SbS_g?si=WXg-Wqhe5-S_Jy_N" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- java programming -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80"
+                    alt="Python">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Java Programming</h3>
+                <p>Learn Java Programming from basics to advanced concepts including data science and automation</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!--Python programming  -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&q=80"
+                    alt="Python">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Python Programming</h3>
+                <p>Learn Python Programming from basics to advanced concepts</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+
+        <!-- Data Structures & Algorithms in C++ -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="img/c++dsa.jpg" alt="DSA in c++">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Data Structures & Algorithms in C++</h3>
+                <p>Master fundamental data structures and algorithms for efficient problem-solving</p>
+                <a href="https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=9r-Al2urj2IVb9x1"
+                    class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- Data Structures & Algorithms in Java -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80"
+                    alt="DSA">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Data Structures & Algorithms in Java</h3>
+                <p>Master fundamental data structures and algorithms for efficient problem-solving</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- Mobile App Development -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80"
+                    alt="Mobile Development">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Mobile App Development</h3>
+                <p>Build cross-platform mobile applications using React Native and Flutter</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- Machine Learning -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
+                    alt="Machine Learning">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Machine Learning</h3>
+                <p>Learn the fundamentals of machine learning and artificial intelligence</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+
+        <!-- Cloud Computing -->
+        <!-- <div class="course-card">
+            <div class="card-border"></div>
+            <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80"
+                    alt="Cloud Computing">
+                <div class="image-overlay"></div>
+            </div>
+            <div class="card-content">
+                <h3>Cloud Computing</h3>
+                <p>Master cloud platforms like AWS, Azure, and Google Cloud for scalable applications</p>
+                <a href="#" class="card-button">Watch Now</a>
+            </div>
+        </div> -->
+        
     </section>
 
-    <footer>
+    <!-- <footer>
         <p>© 2025 Codee Crafter | All Rights Reserved</p>
         <marquee behavior="scroll" direction="left" scrollamount="3">
             <p>Made by <span class="author">Huzaif</span></p>
         </marquee>
+    </footer> -->
+
+
+    <footer>
+        <div class="footer-content">
+            <marquee>Welcome to my education website! Feel free to explore and get in touch.</marquee>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p>© 2025 Codee Crafter | All Rights Reserved</p>
+            <p class="author">Created with ❤️ by HUZAIF</p>
+        </div>
     </footer>
+
 
     <script src="script.js"></script>
 </body>
-</html> 
+
+</html>
